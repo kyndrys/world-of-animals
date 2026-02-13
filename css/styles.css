@@ -1,3 +1,4 @@
+/* Navigation Styles */
 ul {
   list-style-type: none;
   margin: 0;
@@ -28,4 +29,18 @@ li a:hover:not(.active) {
 .active {
   background-color: #F26938;
   color: #102042;
+}
+
+/* Coming soon */
+.coming-soon {
+  border: 1px solid #102042;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+/* Homepage Image Previews */
+.preview {
+  width: 25%
+  display: block;
+  margin: 0 auto 10px auto;
 }
