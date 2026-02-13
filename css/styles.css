@@ -38,7 +38,7 @@ nav ul li a:hover:not(.active) {
 .coming-soon {
   border: 1px solid #102042;
   padding: 15px;
-  margin: 0 auto 25px auto;
+  margin: 0 0 25px 0;
   width: fit-content;
 }
 
