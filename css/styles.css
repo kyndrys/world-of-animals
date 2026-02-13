@@ -1,19 +1,22 @@
-/* Navigation Styles */
-ul {
+/* Styles for the navigation bar */
+nav {
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #102042;
-  position: fixed;
-  top: 0;
 }
 
-li {
+nav ul li {
   float: left;
 }
 
-li a {
+nav ul li a {
   display: block;
   color: #F26938;
   text-align: center;
@@ -21,7 +24,7 @@ li a {
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
+nav ul li a:hover:not(.active) {
   background-color: #054E31;
   color: #C9AD86;
 }
@@ -35,7 +38,9 @@ li a:hover:not(.active) {
 .coming-soon {
   border: 1px solid #102042;
   padding: 15px;
-  margin-bottom: 25px;
+  margin: 0 auto 25px auto;
+  width: fit-content;
+  text-align: center;
 }
 
 /* Homepage Image Previews */
