@@ -40,7 +40,6 @@ nav ul li a:hover:not(.active) {
   padding: 15px;
   margin: 0 auto 25px auto;
   width: fit-content;
-  text-align: center;
 }
 
 /* Homepage Image Previews */
