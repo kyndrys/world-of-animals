@@ -41,6 +41,4 @@ li a:hover:not(.active) {
 /* Homepage Image Previews */
 .preview {
   width: 25%
-  display: block;
-  margin: 0 auto 10px auto;
 }
