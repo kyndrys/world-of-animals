@@ -39,11 +39,11 @@ nav ul li a:hover:not(.active) {
   border: 1px solid #102042;
   padding: 5px;
   margin-bottom: 5px;
-  width: fit-content;
+  width: 25%;
   text-align: center;
 }
 
 /* Homepage Image Previews */
 .preview {
-  width: 100%
+  width: 25%
 }
