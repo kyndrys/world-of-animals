@@ -1,0 +1,61 @@
+<!-- Loan Payment Calculator -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loan Calculators</title>
+    <script>
+      function payment() {
+        let mp_PV = document.getElementById("mp_loanAmount").value;
+        let mp_rInput = document.getElementById("mp_interestRate").value;
+        let mp_r =  Number(mp_rInput)/100/12; // Divide by 100 for % -> 0.00, Divide by 12 for monthly rate calculation. //
+        let mp_ytime = document.getElementById("mp_years").value;
+        let mp_n = Number(mp_ytime)*12;           // Multiply by 12 for monthly payments
+        let mp_Pcalc = (mp_r*mp_PV)/(1-(1+mp_r)**-mp_n);
+        let mp_P = mp_Pcalc.toFixed(2);
+        document.getElementById("mp_monthlypayment").innerHTML=mp_P;
+        /* document.getElementById("loan").innerHTML=PV;
+        document.getElementById("rate").innerHTML=rInput;
+        document.getElementById("ytime").innerHTML=ytime;
+        document.getElementById("months").innerHTML=n; */
+      }
+
+      function timeframe() {
+        let tf_PV = document.getElementById("tf_loanAmount").value;
+        let tf_rInput = document.getElementById("tf_interestRate").value;
+        let tf_r =  Number(tf_rInput)/100/12; // Divide by 100 for % -> 0.00, Divide by 12 for monthly rate calculation. //
+        let tf_P = document.getElementById("tf_payment").value;
+        let tf_n = -Math.log(1-(tf_PV*tf_r/tf_P))/Math.log(1+tf_r);
+        let tf_months = tf_n.toFixed(0);
+        let tf_years = tf_months/12;
+        document.getElementById("tf_months").innerHTML=tf_months;
+        document.getElementById("tf_years").innerHTML=tf_years;
+      }
+    </script>
+  </head>
+  
+  <body>
+    
+    <h1>Loan Calculators</h1>
+    <br>
+    <h2>Monthly Payment Calculator</h2>
+    <p>Present Loan Amount: $<input id="mp_loanAmount"></p>
+    <p>Annual Interest Rate: <input id="mp_interestRate">%</p>
+    <p>Length of Loan: <input id="mp_years"> years</p>
+    <p><button onclick="payment()">Calculate</button></p>
+    <br>
+    <p>Monthly Payment = $<span id="mp_monthlypayment"></span></p>
+    <!-- <p>This is for a loan of <b>$<span id="loan">__</span></b> 
+        for <b><span id="ytime">__</span></b> years 
+        with an annual interest rate of <b><span id="rate">__</span>%</b>.</p> -->
+    <br>
+    <hr>
+    <br>
+    <h2>Loan Length Calculator</h2>
+    <p>Present Loan Amount: $<input id="tf_loanAmount"></p>
+    <p>Annual Interest Rate: <input id="tf_interestRate">%</p>
+    <p>Monthly Payment: $<input id="tf_payment"></p>
+    <p><button onclick="timeframe()">Calculate</button></p>
+    <br>
+    <p>Loan Length = <span id="tf_years"></span> years or <span id="tf_months"></span> months</p>
+  </body>
+</html>
