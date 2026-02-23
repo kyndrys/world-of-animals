@@ -13,10 +13,10 @@
         let mp_Pcalc = (mp_r*mp_PV)/(1-(1+mp_r)**-mp_n);
         let mp_P = mp_Pcalc.toFixed(2);
         document.getElementById("mp_monthlypayment").innerHTML=mp_P;
-        /* document.getElementById("loan").innerHTML=PV;
-        document.getElementById("rate").innerHTML=rInput;
-        document.getElementById("ytime").innerHTML=ytime;
-        document.getElementById("months").innerHTML=n; */
+        document.getElementById("mp_loan").innerHTML=mp_PV;
+        document.getElementById("mp_rate").innerHTML=mp_rInput;
+        document.getElementById("mp_ytime").innerHTML=mp_ytime;
+        document.getElementById("mp_months").innerHTML=mp_n;
       }
 
       function timeframe() {
@@ -26,7 +26,8 @@
         let tf_P = document.getElementById("tf_payment").value;
         let tf_n = -Math.log(1-(tf_PV*tf_r/tf_P))/Math.log(1+tf_r);
         let tf_months = tf_n.toFixed(0);
-        let tf_years = tf_months/12;
+        let tf_year = tf_months/12;
+        let tf_years =tf_year.toFixed(2);
         document.getElementById("tf_months").innerHTML=tf_months;
         document.getElementById("tf_years").innerHTML=tf_years;
       }
@@ -44,9 +45,9 @@
     <p><button onclick="payment()">Calculate</button></p>
     <br>
     <p>Monthly Payment = $<span id="mp_monthlypayment"></span></p>
-    <!-- <p>This is for a loan of <b>$<span id="loan">__</span></b> 
-        for <b><span id="ytime">__</span></b> years 
-        with an annual interest rate of <b><span id="rate">__</span>%</b>.</p> -->
+    <p>This is for a loan of <b>$<span id="mp_loan">__</span></b> 
+        for <b><span id="mp_ytime">__</span></b> years 
+        with an annual interest rate of <b><span id="mp_rate">__</span>%</b>.</p>
     <br>
     <hr>
     <br>
@@ -56,6 +57,6 @@
     <p>Monthly Payment: $<input id="tf_payment"></p>
     <p><button onclick="timeframe()">Calculate</button></p>
     <br>
-    <p>Loan Length = <span id="tf_years"></span> years or <span id="tf_months"></span> months</p>
+    <p>Loan Length = <span id="tf_years">__</span> years or <span id="tf_months">__</span> months</p>
   </body>
 </html>
